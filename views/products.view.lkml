@@ -64,11 +64,13 @@ view: products {
   measure: total_retail_price {
     type: sum
     sql: ${retail_price} ;;
+    value_format: "$ 0.00"
   }
 
   measure: average_retail_price {
     type: average
     sql: ${retail_price} ;;
+    value_format: "$ 0.00"
   }
 
   dimension: sku {
@@ -80,4 +82,105 @@ view: products {
     type: count
     drill_fields: [id, item_name, inventory_items.count, product_sheets.count]
   }
+
+  #-------- Miscellaneos ---------#
+
+  measure: category_count {
+    type: count_distinct
+    group_label: "Miscellaneous"
+    group_item_label: "Category count"
+    sql: ${category} ;;
+    html:
+    <div style="border:1px solid;border-color:#EEEEEE;background-color:#FAEACB;border-radius:6px;height:100%;">
+      <p style="font-size:45%;line-height:1rem;padding-top:10px">
+        Category Count
+      </p>
+      <p style="font-size:60%;line-height:1rem;padding:5px 0px">
+        {{rendered_value}}
+      </p>
+    ;;
+  }
+
+  measure: brand_count {
+    type: count_distinct
+    group_label: "Miscellaneous"
+    group_item_label: "Brand count"
+    sql: ${brand} ;;
+    html:
+   <div style="border:1px solid;border-color:#EEEEEE;background-color:#FCFCFC;border-radius:6px;height:100%;">
+      <p style="font-size:45%;line-height:1rem;padding-top:10px">
+        Brand Count
+      </p>
+      <p style="font-size:60%;line-height:1rem;padding:5px 0px">
+        {{rendered_value}}
+      </p>
+    ;;
+  }
+
+  measure: Product_count {
+    type: count_distinct
+    group_label: "Miscellaneous"
+    group_item_label: "Product count"
+    sql: ${id} ;;
+    html:
+       <div style="border:1px solid;border-color:#EEEEEE;background-color:#F7DBD7;border-radius:6px;height:100%;">
+          <p style="font-size:45%;line-height:1rem;padding-top:10px">
+            Product Count
+          </p>
+          <p style="font-size:60%;line-height:1rem;padding:5px 0px">
+            {{rendered_value}}
+          </p>
+        ;;
+  }
+
+  measure: sku_count {
+    type: count_distinct
+    group_label: "Miscellaneous"
+    group_item_label: "SKU count"
+    sql: ${sku} ;;
+    html:
+       <div style="border:1px solid;border-color:#EEEEEE;background-color:#9CC0E7;border-radius:6px;height:100%;">
+          <p style="font-size:45%;line-height:1rem;padding-top:10px">
+            SKU Count
+          </p>
+          <p style="font-size:60%;line-height:1rem;padding:5px 0px">
+            {{rendered_value}}
+          </p>
+        ;;
+  }
+
+  measure: total_retail_price_value {
+    type: number
+    group_label: "Miscellaneous"
+    group_item_label: "Total Retail Price"
+    sql: ${total_retail_price} ;;
+    value_format: "$ 0.000,,\" M\""
+    html:
+       <div style="border:1px solid;border-color:#EEEEEE;background-color:#E3D5A8;border-radius:6px;height:100%;">
+          <p style="font-size:45%;line-height:1rem;padding-top:10px">
+            Total Retail Price
+          </p>
+          <p style="font-size:60%;line-height:1rem;padding:5px 0px">
+            {{rendered_value}}
+          </p>
+        ;;
+  }
+
+  measure: average_retail_price_value {
+    type: number
+    group_label: "Miscellaneous"
+    group_item_label: "Average Retail Price"
+    sql: ${average_retail_price} ;;
+    value_format: "$ 0.00"
+    html:
+       <div style="border:1px solid;border-color:#EEEEEE;background-color:#A0C3A9;border-radius:6px;height:100%;">
+          <p style="font-size:45%;line-height:1rem;padding-top:10px">
+            Average Retail Price
+          </p>
+          <p style="font-size:60%;line-height:1rem;padding:5px 0px">
+            {{rendered_value}}
+          </p>
+        ;;
+  }
+
 }
