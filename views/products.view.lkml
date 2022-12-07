@@ -28,6 +28,15 @@ view: products {
     sql: ${TABLE}.category ;;
   }
 
+  dimension: category_drill {
+    type: string
+    sql: ${TABLE}.category ;;
+    link: {
+      label: "To Order Line Item Data"
+      url: "https://hack.looker.com/dashboards/34?Brand={{_filters['products.brand'] | url_encode}}&Category={{value | url_encode}}&Department={{_filters['products.department'] | url_encode}}"
+    }
+  }
+
   dimension: department {
     type: string
     sql: ${TABLE}.department ;;
