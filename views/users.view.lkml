@@ -100,6 +100,15 @@ view: users {
     sql: ${TABLE}.zip ;;
   }
 
+  measure: user_count {
+    type: count_distinct
+    sql: ${id} ;;
+    html:
+    <img src="https://www.shareicon.net/data/512x512/2016/06/30/788858_group_512x512.png" height="100%" width="20%"></img>
+    <span style="font-size:60%;padding:0px 10px">{{rendered_value}}</span>
+    ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, last_name, first_name, orders.count]
