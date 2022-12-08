@@ -32,7 +32,7 @@ view: products {
     type: string
     sql: ${TABLE}.category ;;
     link: {
-      label: "To Order Line Item Data"
+      label: "To Category Analysis"
       url: "https://hack.looker.com/dashboards/34?Brand={{_filters['products.brand'] | url_encode}}&Category={{value | url_encode}}&Department={{_filters['products.department'] | url_encode}}"
     }
   }
@@ -91,7 +91,7 @@ view: products {
     group_item_label: "Category count"
     sql: ${category} ;;
     html:
-    <div style="border:1px solid;border-color:#EEEEEE;background-color:#FAEACB;border-radius:6px;height:100%;">
+    <div style="border:1px solid;border-color:#EEEEEE;border-radius:6px;height:100%;">
       <p style="font-size:45%;line-height:1rem;padding-top:10px">
         Category Count
       </p>
@@ -107,7 +107,7 @@ view: products {
     group_item_label: "Brand count"
     sql: ${brand} ;;
     html:
-   <div style="border:1px solid;border-color:#EEEEEE;background-color:#FCFCFC;border-radius:6px;height:100%;">
+   <div style="border:1px solid;border-color:#EEEEEE;border-radius:6px;height:100%;">
       <p style="font-size:45%;line-height:1rem;padding-top:10px">
         Brand Count
       </p>
@@ -123,7 +123,7 @@ view: products {
     group_item_label: "Product count"
     sql: ${id} ;;
     html:
-       <div style="border:1px solid;border-color:#EEEEEE;background-color:#F7DBD7;border-radius:6px;height:100%;">
+       <div style="border:1px solid;border-color:#EEEEEE;border-radius:6px;height:100%;">
           <p style="font-size:45%;line-height:1rem;padding-top:10px">
             Product Count
           </p>
@@ -139,7 +139,7 @@ view: products {
     group_item_label: "SKU count"
     sql: ${sku} ;;
     html:
-       <div style="border:1px solid;border-color:#EEEEEE;background-color:#9CC0E7;border-radius:6px;height:100%;">
+       <div style="border:1px solid;border-color:#EEEEEE;border-radius:6px;height:100%;">
           <p style="font-size:45%;line-height:1rem;padding-top:10px">
             SKU Count
           </p>
@@ -156,7 +156,7 @@ view: products {
     sql: ${total_retail_price} ;;
     value_format: "$ 0.000,,\" M\""
     html:
-       <div style="border:1px solid;border-color:#EEEEEE;background-color:#E3D5A8;border-radius:6px;height:100%;">
+       <div style="border:1px solid;border-color:#ffffff;border-radius:6px;height:100%;">
           <p style="font-size:45%;line-height:1rem;padding-top:10px">
             Total Retail Price
           </p>
@@ -173,7 +173,7 @@ view: products {
     sql: ${average_retail_price} ;;
     value_format: "$ 0.00"
     html:
-       <div style="border:1px solid;border-color:#EEEEEE;background-color:#A0C3A9;border-radius:6px;height:100%;">
+       <div style="border:1px solid;border-color:#ffffff;border-radius:6px;height:100%;">
           <p style="font-size:45%;line-height:1rem;padding-top:10px">
             Average Retail Price
           </p>
